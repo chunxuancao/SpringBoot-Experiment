@@ -3,9 +3,11 @@ package com.springboot.demo.servletComponent;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
-@Component
+@WebFilter(value = { "/antionLogin", "/antionMyFilter" })
+// @Component
 public class MyFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -13,9 +15,10 @@ public class MyFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
+            throws IOException, ServletException {
         System.out.println("hello MyFilter");
-        filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override
@@ -23,4 +26,3 @@ public class MyFilter implements Filter {
 
     }
 }
-
