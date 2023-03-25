@@ -31,11 +31,18 @@ public class CommentController {
      * 步骤4：实现更新操作,需要接收两个参数
      */
     @GetMapping("/update/{id}/{author}")
-    public int updateComment(@PathVariable("id") int id, @PathVariable("author") String author) {
+    public Comment updateComment(@PathVariable("id") int id, @PathVariable("author") String author) {
+        System.out.println("+++++++++++++++++++++++++++");
+        System.out.println(id);
+        System.out.println(author);
+        System.out.println("+++++++++++++++++++++++++++");
         Comment comment = commentService.findById(id);
+        System.out.println(comment);
         comment.setAuthor(author);
+        System.out.println(comment);
         int i = commentService.updateComment(comment);
-        return i;
+        Comment updateComment = commentService.findById(id);
+        return updateComment;
     }
 
     /*

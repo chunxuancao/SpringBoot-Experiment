@@ -1,10 +1,12 @@
 package com.springboot.demo.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 //步骤2：添加@Entity注解，指定Comment类与数据库中哪张表映射
 @Entity(name = "t_comment")
-public class Comment {
+public class Comment implements Serializable {
     // 步骤1：创建与数据库对应的属性
     @Id // 表明映射对应的主键id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 设置主键自增策略
