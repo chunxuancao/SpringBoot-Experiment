@@ -5,6 +5,7 @@ package com.springboot.demo.controller;
 import com.springboot.demo.domain.Comment;
 import com.springboot.demo.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,7 @@ public class CommentController {
     /*
      * 步骤3：实现查询控制
      */
+
     @GetMapping("/get/{id}") // 这里的id为路径访问传递过来的值
     public Comment findById(@PathVariable("id") Integer id) {// @PathVariable*是spring3.0的一个新功能:接收请求路径中占位符的值
         Comment comment = commentService.findById(id);
