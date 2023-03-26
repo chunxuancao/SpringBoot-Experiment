@@ -8,12 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * @Classname CSRFController
- * @Description TODO
- * @Date 2019-3-6 15:59
- * @Created by CrazyStone
- */
+
 @Controller
 public class CSRFController {
     // 向用户修改页跳转

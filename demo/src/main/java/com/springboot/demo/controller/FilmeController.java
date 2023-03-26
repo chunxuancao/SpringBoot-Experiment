@@ -13,12 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 import java.util.Enumeration;
 
-/**
- * @Classname FilmeController
- * @Description TODO
- * @Date 2019-3-5 13:45
- * @Created by CrazyStone
- */
+
 @Controller
 public class FilmeController {
     //  影片详情页

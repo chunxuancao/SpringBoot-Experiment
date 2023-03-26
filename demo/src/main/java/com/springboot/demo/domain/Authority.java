@@ -5,9 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * Created by admin on 2018-11-20.
- */
+
 @Entity(name = "t_authority ")
 public class Authority {
     @Id

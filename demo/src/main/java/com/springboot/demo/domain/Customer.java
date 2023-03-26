@@ -3,9 +3,7 @@ package com.springboot.demo.domain;
 
 import javax.persistence.*;
 
-/**
- * Created by crazyStone 2018-11-7.
- */
+
 @Entity(name = "t_customer")
 public class Customer {
     @Id

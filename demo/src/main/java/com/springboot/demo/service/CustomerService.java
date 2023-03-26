@@ -10,12 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * @Classname CustomerService
- * @Description 对用户数据结合Redis缓存进行业务处理
- * @Date 2019-3-5 15:58
- * @Created by CrazyStone
- */
 @Service
 public class CustomerService {
     @Autowired

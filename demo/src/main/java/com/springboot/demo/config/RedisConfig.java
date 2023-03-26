@@ -1,4 +1,4 @@
-package com.springboot.demo.onfig;
+package com.springboot.demo.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -16,17 +16,9 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
 
-/**
- * Created by shitou on 2018-11-22.
- * Spring Boot 2.X版本自定义序列化方式
- */
 @Configuration
 public class RedisConfig {
-    /**
-     *  定制Redis API模板RedisTemplate
-     * @param redisConnectionFactory
-     * @return
-     */
+
     @Bean
     public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<Object, Object> template = new RedisTemplate();
@@ -47,8 +39,6 @@ public class RedisConfig {
 
     /**
      * 定制Redis缓存管理器RedisCacheManager，实现自定义序列化并设置缓存时效
-     * @param redisConnectionFactory
-     * @return
      */
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
@@ -62,11 +52,12 @@ public class RedisConfig {
         jacksonSeial.setObjectMapper(om);
         // 定制缓存数据序列化方式及时效
         RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
-                .entryTtl(Duration.ofDays(1))   // 设置缓存有效期为1天
+                .entryTtl(Duration.ofDays(1)) // 设置缓存有效期为1天
                 .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(strSerializer))
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(jacksonSeial))
-                .disableCachingNullValues();   // 对空数据不进行缓存
-        RedisCacheManager cacheManager = RedisCacheManager.builder(redisConnectionFactory).cacheDefaults(config).build();
+                .disableCachingNullValues(); // 对空数据不进行缓存
+        RedisCacheManager cacheManager = RedisCacheManager.builder(redisConnectionFactory).cacheDefaults(config)
+                .build();
         return cacheManager;
     }
 }
