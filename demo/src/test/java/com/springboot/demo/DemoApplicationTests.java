@@ -1,7 +1,6 @@
 package com.springboot.demo;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
 import java.net.URLDecoder;
 
 import org.junit.jupiter.api.Test;
@@ -20,6 +19,7 @@ class DemoApplicationTests {
 	private TemplateEngine templateEngine;
 	String to = "chuxuancao@qq.com";// TODO： 自己的邮箱自己填，建议qq邮箱，设置-账户-生成授权码，授权码在全局配置文件那
 
+	// 处理文件路径的问题
 	public String handleStringFirst(String name) {
 		String handleStringFirst = name.substring(1);
 		handleStringFirst = handleStringFirst.replaceAll("%20", " ");
