@@ -3,25 +3,38 @@
     
   }
   .title{
-      size: 190px;
+      font-size: 1.7rem;
       color: #000000;
+      text-align: left;
+      display: flex;
+      justify-content: flex-start;
   }
+
   body {
     margin: 0;
     display: flex;
     width: 100%;
-    height: 100vh;
     flex-direction: column;
+    height: 100%;
+    margin:0px;
+    background: url(https://img01.dimtown.com/uploads/2023/03/20230316160056885.jpg) no-repeat;
+    background-size:100% 100%;
+    background-attachment:fixed;
+    min-width: 1200;
+    font-size: 100%;
   }
   
   /* 设置页眉样式 */
   .header {
-    background-color: #e60606;
-    padding: 20px;
-    text-align: center;
+    background-color: #f1f1f1;
+    padding: 2.5vh;
     width: 100%;
-    flex: 1;
-    
+    border: #000000;
+    border-style: dotted;
+    position: fixed;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
   }
   
   /* 设置顶部导航栏的样式 */
@@ -31,49 +44,53 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
-      width: 200px;
-      background-color: #e60606;
-      
+      width: 15%;
+      background-color: transparent;
   }
   
   /* 设置 topnav 链接的样式 */
   .topnav a {
       display: block;
-      color: #f5eded;
-      padding: 20px 50px;
+      color: #000000;
+      padding: 3.6vh;
       text-decoration: none;
+      border: #000000;
+      border-style: dotted;
   }
   
   /* 改变鼠标悬停时的颜色 */
   .topnav a:hover {
-    background-color: #080707;
-    color: rgb(234, 223, 223);
+    background-color: #6aff00;
+    color: rgb(0, 0, 0);
   }
   
   /* 创建并排的三个非等列 */
   .column {
     float: left;
-    padding: 10px;
+    padding: 0px;
+    margin-top: 5rem;
   }
-  
+  .fixed_sideleft{
+    width: 15%;
+    background-color: #f1f1f1;
+    height: 100vh;
+    position: fixed;
+  }
   /* 左和右列 */
   .column.sideleft{
     width: 25%;
-    background-color: #e60606;
-    height: 1500px;
+    background-color: transparent;
+    height: 100vh;
   }
   .column.sideright{
       width: 25%;
-      height:1500px
+      height:1500px;
+      margin-right: 50px;
     }
   /* 中间列 */
   .column.middle {
     width: 50%;
-    height: 1500px;
-    margin:0px;
-  background: url(https://img01.dimtown.com/uploads/2023/03/20230316160056885.jpg) no-repeat;
-  background-size:100% 100%;
-  background-attachment:fixed;
+
   }
   
   /* 清除列之后的浮动 */
@@ -90,9 +107,18 @@
     }
   }
   
-  /* 设置页脚的样式 */
-  .footer {
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: center;
+  /* 设置按钮的样式 */
+  .button {
+    border:#f1f1f1;
+    color: rgb(234, 0, 0);
+    padding: 1vh 1rem;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+  .button a:hover {
+    color: #ffffff;
+    background-color: #000000;
   }

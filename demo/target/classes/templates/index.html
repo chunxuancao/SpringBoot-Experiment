@@ -9,36 +9,45 @@
     <script th:src="@{/layui-main/src/layui.js}"></script>
     </head>
     <body>
-    <div class="header">
-      <h1 class="title">欢迎来到chuxuan的知识库后台管理界面</h1>
-    </div>
-    
-    
-    
-    <div class="row">
-      <div class="column sideleft" style="width: 15%;">
-        <div class="topnav">
-          <a href="#">控制台</a>
-          <a href="#">资源管理</a>
-          <a href="#">网站介绍</a>
-          <a href="#">用户设置</a>
-          <a href="#">Git项目管理</a>
-          <a href="#">网站可视化分析</a>
-          <a href="#">数据库管理</a>
-          <a href="#">文章管理</a>
-          <!-- key:value js来构建 -->
+      <div class="header">
+        <div class="title">SpringBoot后台管理界面</div>
+        <div style="display: flex;flex-direction: row;justify-content: flex-end;flex: 1;">    
+          <div class="button" style="background-color: rgb(131, 140, 147);">
+            <a href="/login.html">登录</a>
+          </div>
+          <div class="button" style="background-color: rgb(131, 140, 147);">
+            <a href="#">注册</a>
+          </div>
         </div>
       </div>
-      <div class="column middle" style="width: 85%;">
-        <div style="background:rgba(240, 181, 33, 0.5);height: 1500px;">
+    
+      <div class="row">
+
+
+        <div class="column sideleft" style="width: 15%;">
+          <div class="fixed_sideleft">
+          <div class="topnav">
+            <a href="#">控制台</a>
+            <a href="#">资源管理</a>
+            <a href="#">网站介绍</a>
+            <a href="#">用户设置</a>
+            <a href="#">Git项目管理</a>
+            <a href="#">网站可视化分析</a>
+            <a href="#">数据库管理</a>
+            <a href="#">文章管理</a>
+            <!-- key:value js来构建 -->
+          </div>
+        </div>
+        </div>
+
+
+        <div class="column middle" style="width: 85%;">
+          <div style="background:rgba(240, 181, 33, 0.5);height: 1500px;">
+          </div>
         </div>
       </div>
-    </div>
-    <!-- 
-    <div class="footer">
-      <p>Footer</p>
-    </div> -->
+        
       
-    
-    
-    </body></html>
+      
+    </body>
+</html>
