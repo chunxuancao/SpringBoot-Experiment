@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh_CH" xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <title>chuxuan个人博客后台操作系统</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/css/index.css}" rel="stylesheet">
+    <link th:href="@{/lib/layui/css/layui.css}" rel="stylesheet">
+    <script th:src="@{/lib/layui/layui.js}"></script>
+    </head>
+    <body>
+      <div class="header">
+        <div class="title"><a href="/index" class="title">SpringBoot后台管理界面</a> </div>
+        <div style="display: flex;flex-direction: row;justify-content: flex-end;flex: 1;">    
+          <div class="button" style="background-color: rgb(131, 140, 147);">
+            <a href="/login.html">登录</a>
+          </div>
+          <div class="button" style="background-color: rgb(131, 140, 147);">
+            <a href="#">注册</a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row">
+
+
+        <div class="column sideleft" style="width: 15%;">
+          <div class="fixed_sideleft">
+          <div class="topnav">
+            <a href="/BlogWrite">博客写作</a>
+            <a href="#">文章管理</a>
+            <a href="#">邮件</a>
+            <a href="#">数据库</a>
+            <a href="#">Git项目</a>
+            <a href="#">可视化</a>
+            <a href="#">用户设置</a>
+            <a href="#">网站介绍</a>
+            <!-- key:value js来构建 -->
+          </div>
+        </div>
+        </div>
+
+
+        <div class="column middle" style="width: 85%;">
+          <div style="background:rgba(240, 181, 33, 0.5);height: auto;">
+          </div>
+        </div>
+      </div>
+        
+      
+      
+    </body>
+</html>
