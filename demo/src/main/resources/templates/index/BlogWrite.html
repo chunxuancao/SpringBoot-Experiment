@@ -35,14 +35,14 @@
         <div class="column sideleft" style="width: 15%;">
           <div class="fixed_sideleft">
           <div class="topnav">
-            <a href="#">博客写作</a>
-            <a href="#">文章管理</a>
-            <a href="#">邮件</a>
-            <a href="#">数据库</a>
-            <a href="#">Git项目</a>
-            <a href="#">可视化</a>
-            <a href="#">用户设置</a>
-            <a href="#">网站介绍</a>
+            <a href="/BlogWrite">博客写作</a>
+            <a href="/Article_Management">文章管理</a>
+            <a href="/Email">邮件</a>
+            <a href="/DataBase">数据库</a>
+            <a href="/Git_Project">Git项目</a>
+            <a href="/Visualization">可视化</a>
+            <a href="/User_Settings">用户设置</a>
+            <a href="/Website_Introduction">网站介绍</a>
             <!-- key:value js来构建 -->
           </div>
         </div>
@@ -57,7 +57,7 @@
             </div>
           </div>
         </div>
-    
+      </div>
     
             <script th:src="@{/lib/jquery.min.js}"></script>
             <script th:src="@{/lib/editormd/editormd.min.js}"></script>
@@ -111,7 +111,7 @@
                                 mdEditorForm.submit();
                             },
                             index : function(){
-                                window.location.href = '/';
+                                window.location.href = '/index';
                             },
                         }
                     });
