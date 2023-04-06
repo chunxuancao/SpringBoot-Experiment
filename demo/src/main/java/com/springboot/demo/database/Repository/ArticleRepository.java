@@ -18,6 +18,17 @@ public interface ArticleRepository extends JpaRepository<Article, Integer> {
     // 查看某一篇文章的内容
     // 获取文章的作者的名字
 
+    // Test
+    // 根据id修改文章的内容
+    @Transactional
+    @Modifying
+    @Query(value = "update article c set c.content = ?1 where c.aid = ?2")
+    public int updateContent(String content, Integer aid);
+
+    @Transactional
+    @Modifying
+    @Query(value = "insert into article(title,content,uid) values(?1,?2,?3)", nativeQuery = true)
+    public int addArticle(String title, String content, Integer uid);
     // @Query("select c from t_comment c where c.aId = ?1")
     // public List<Discuss> getDiscussPaged(Integer aid, Pageable pageable);
 

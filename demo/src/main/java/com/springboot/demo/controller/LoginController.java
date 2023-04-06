@@ -11,6 +11,6 @@ public class LoginController {
     @GetMapping("/toLoginPage")
     public String toLoginPage(Model model) {
         model.addAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
-        return "login";
+        return "login/login";
     }
 }

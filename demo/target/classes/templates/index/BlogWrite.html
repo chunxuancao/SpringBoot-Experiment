@@ -50,11 +50,23 @@
 
 
         <div class="column middle" style="width: 85%;">
-          <div style="background:rgba(240, 181, 33, 0.5);height: 80vh;">
+          <div style="background-color: rgb(246, 255, 0.5);;height: 80vh;">
             <!-- 这里是markdown编辑框 -->
-            <div id="article-content" style="position: fixed;">
-              <textarea style="display:none;"> </textarea>
-            </div>
+           <!--博客表单-->
+              <form name="mdEditorForm" style="position: fixed;width: 85%;" >
+                <div style="display: flex;">
+                    <div style="font-size: 2rem; color: #f50000; justify-content: flex-start;margin-left: 4rem;">
+                      标题：<input type="text" name="title">
+                  </div>
+                  <div style="font-size: 2rem; color: #fa0000;justify-content: flex-end;flex: 1;">
+                    作者：<input type="text" name="uid">
+                  </div>
+                </div>
+
+                <div id="article-content">
+                    <textarea name="content" id="content" style="display:none;"> </textarea>
+                </div>
+            </form>
           </div>
         </div>
       </div>
@@ -66,8 +78,8 @@
                 //window.onload = function(){ }
                 $(function() {
                     testEditor = editormd("article-content", {
-                        width : "85%",
-                        height : 670,
+                        width : "100%",
+                        height : 600,
                         syncScrolling : "single",
                         path : "../lib/editormd/lib/",
                         saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
@@ -107,7 +119,7 @@
                             releaseIcon : function(cm, icon, cursor, selection) {
                                 //表单提交
                                 mdEditorForm.method = "post";
-                                mdEditorForm.action = "/article/addArticle";//提交至服务器的路径
+                                mdEditorForm.action = "/addArticle/Acticle";//提交至服务器的路径
                                 mdEditorForm.submit();
                             },
                             index : function(){
