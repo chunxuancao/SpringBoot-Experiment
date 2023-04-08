@@ -8,8 +8,8 @@
       <link th:href="@{/lib/layui/css/layui.css}" rel="stylesheet">
       <script th:src="@{/lib/layui/layui.js}"></script>
       <script th:src="@{/lib/jquery.min.js}"></script>
+      <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
       <!--Editor.md-->
-      <link rel="stylesheet" th:href="@{/lib/editormd/css/style.css}" />
       <link rel="stylesheet"  th:href="@{/lib/editormd/css/editormd.css}" />
       <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
       
@@ -21,10 +21,10 @@
         </div>
         <div style="display: flex;flex-direction: row;justify-content: flex-end;flex: 1;">    
           <div class="button" style="background-color: rgb(131, 140, 147);">
-            <a href="/login.html">登录</a>
+            <a href="/login.html" style="color: black;">登录</a>
           </div>
           <div class="button" style="background-color: rgb(131, 140, 147);">
-            <a href="#">注册</a>
+            <a href="#" style="color: black;">注册</a>
           </div>
         </div>
       </div>
@@ -50,16 +50,16 @@
 
 
         <div class="column middle" style="width: 85%;">
-          <div style="background-color: rgb(246, 255, 0.5);;height: 80vh;">
+          <div style="background-color: rgb(255, 255, 255);;height: 100vh;">
             <!-- 这里是markdown编辑框 -->
            <!--博客表单-->
-              <form name="mdEditorForm" style="position: fixed;width: 85%;" >
+              <form name="mdEditorForm" style="position: fixed;width: 85%; margin-left: 2rem;" >
                 <div style="display: flex;">
-                    <div style="font-size: 2rem; color: #f50000; justify-content: flex-start;margin-left: 4rem;">
-                      标题：<input type="text" name="title">
+                    <div style="font-size: 1.5rem; color: #f50000; justify-content: flex-start;margin-left: 13rem;">
+                      标题：<input type="text" name="title" style="background-color: rgb(169, 250, 247);">
                   </div>
-                  <div style="font-size: 2rem; color: #fa0000;justify-content: flex-end;flex: 1;">
-                    作者：<input type="text" name="uid">
+                  <div style="font-size: 1.5rem; color: #fa0000;justify-content: flex-end;flex: 1;margin-left: 4rem;">
+                    作者：<input type="text" name="uid" style="background-color: rgb(169, 250, 247);">
                   </div>
                 </div>
 
@@ -78,7 +78,7 @@
                 //window.onload = function(){ }
                 $(function() {
                     testEditor = editormd("article-content", {
-                        width : "100%",
+                        width : "85%",
                         height : 600,
                         syncScrolling : "single",
                         path : "../lib/editormd/lib/",
@@ -120,6 +120,7 @@
                                 //表单提交
                                 mdEditorForm.method = "post";
                                 mdEditorForm.action = "/addArticle/Acticle";//提交至服务器的路径
+                                
                                 mdEditorForm.submit();
                             },
                             index : function(){
@@ -128,6 +129,7 @@
                         }
                     });
                 });
-            </script>     
+            </script>
+            <script th:src="@{/js/bootstrap.bundle.min.js}"></script>     
     </body>
 </html>

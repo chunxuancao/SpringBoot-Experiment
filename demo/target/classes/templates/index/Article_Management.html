@@ -8,7 +8,8 @@
       <link th:href="@{/lib/layui/css/layui.css}" rel="stylesheet" media="all">
       <script th:src="@{/lib/layui/layui.js}"></script>
       <script th:src="@{/lib/jquery.min.js}"></script>
-      
+      <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+      <link th:href="@{/css/bootstrap-table.css}" rel="stylesheet">
     </head>
     <body>
       <div class="header">
@@ -17,10 +18,10 @@
         </div>
         <div style="display: flex;flex-direction: row;justify-content: flex-end;flex: 1;">    
           <div class="button" style="background-color: rgb(131, 140, 147);">
-            <a href="/login.html">登录</a>
+            <a href="/login.html" style="color: black;">登录</a>
           </div>
           <div class="button" style="background-color: rgb(131, 140, 147);">
-            <a href="#">注册</a>
+            <a href="#" style="color: black;">注册</a>
           </div>
         </div>
       </div>
@@ -46,26 +47,56 @@
 
 
         <div class="column middle" style="width: 85%;">
-          <div style="background:rgba(240, 181, 33, 0.5);height: auto;">
-            <!-- 这里是markdown编辑框 -->
-            <div class="layui-tab layui-tab-card">
-              <ul class="layui-tab-title">
-                <li class="layui-this">增</li>
-                <li>删</li>
-                <li>改</li>
-                <li>查</li>
-              </ul>
-              <div class="layui-tab-content" style="height: 100px;">
-                <div class="layui-tab-item layui-show">1</div>
-                <div class="layui-tab-item">2</div>
-                <div class="layui-tab-item">3</div>
-                <div class="layui-tab-item">4</div>
+          <div style="background:rgba(255, 255, 255, 0.9);height: 100vh;">
+            
+            <div class="layui-container" style="position: fixed;width: 85%;">
+
+              <div>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
               </div>
-            </div>
-          </div>
+
+                <hr class="layui-border-red">
+
+                <div>
+                   <table id="table">
+                   </table>
+                  </div>
+
+                  <nav aria-label="Page navigation example" style="margin: auto;">
+                    <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                    </nav>
+
+
+            
+          </div>     
+            <!-- 显示文章表格，上面是进行增删改查的按钮 -->
+            <!-- <div class="layui-btn-group">
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-sm">
+                <i class="layui-icon">&#xe642;</i>
+              </button>
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-sm">
+                <i class="layui-icon">&#xe640;</i>
+              </button>
+            </div> -->
+            
+            
+          
         </div>
       </div>
-    
-           
+    </div>
+      <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+      <script th:src="@{/js/bootstrap.min.js}"></script>
+      <script th:src="@{/js/bootstrap-table.js}"></script>
+      <script th:src="@{/js/bootstrap-table-zh-CN.js}"></script>
+      <script th:src="@{/js/index/Article_Management.js}"></script>
     </body>
 </html>

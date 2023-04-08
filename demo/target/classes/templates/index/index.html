@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh_CH" xmlns:th="http://www.thymeleaf.org">
     <head>
-    <title>chuxuan个人博客后台操作系统</title>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link th:href="@{/css/index.css}" rel="stylesheet">
-    <link th:href="@{/lib/layui/css/layui.css}" rel="stylesheet">
-    <script th:src="@{/lib/layui/layui.js}"></script>
+      <title>首页</title>
+      <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link th:href="@{/css/index.css}" rel="stylesheet">
+      <link th:href="@{/lib/layui/css/layui.css}" rel="stylesheet" media="all">
+      <script th:src="@{/lib/layui/layui.js}"></script>
+      <script th:src="@{/lib/jquery.min.js}"></script>
+      <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+      
     </head>
     <body>
       <div class="header">
-        <div class="title"><a href="/index" class="title">SpringBoot后台管理界面</a> </div>
+        <div class="title">
+          <a href="/index">SpringBoot后台管理界面</a> 
+        </div>
         <div style="display: flex;flex-direction: row;justify-content: flex-end;flex: 1;">    
           <div class="button" style="background-color: rgb(131, 140, 147);">
-            <a href="/login.html">登录</a>
+            <a href="/login.html" style="color: black;">登录</a>
           </div>
           <div class="button" style="background-color: rgb(131, 140, 147);">
-            <a href="#">注册</a>
+            <a href="#" style="color: black;">注册</a>
           </div>
         </div>
       </div>
@@ -42,12 +47,80 @@
 
 
         <div class="column middle" style="width: 85%;">
-          <div style="background:rgba(240, 181, 33, 0.5);height: auto;">
-          </div>
+          <div style="background:rgba(255, 255, 255, 0.9);height: 100vh;">
+            
+            <div class="layui-container" style="position: fixed;width: 85%;">
+
+              <div>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+
+                <hr class="layui-border-red">
+
+                <div>
+                   <table class="table table-hover table-bordered" >
+                    <thead>
+                      <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                      <th scope="col">Handle</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">3</th>
+                      <td colspan="2">Larry the Bird</td>
+                      <td>@twitter</td>
+                      </tr>
+                      </tbody>
+                   </table>
+                  </div>
+
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                    </nav>
+
+
+            
+          </div>     
+            <!-- 显示文章表格，上面是进行增删改查的按钮 -->
+            <!-- <div class="layui-btn-group">
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-sm">
+                <i class="layui-icon">&#xe642;</i>
+              </button>
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-sm">
+                <i class="layui-icon">&#xe640;</i>
+              </button>
+            </div> -->
+            
+            
+          
         </div>
       </div>
-        
-      
-      
+    </div>
+      <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+           
     </body>
 </html>

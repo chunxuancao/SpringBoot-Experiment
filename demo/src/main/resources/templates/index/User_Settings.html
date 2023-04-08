@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh_CH" xmlns:th="http://www.thymeleaf.org">
     <head>
-      <title>博客写作</title>
+      <title>用户设置</title>
       <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link th:href="@{/css/index.css}" rel="stylesheet">
-      <link th:href="@{/lib/layui/css/layui.css}" rel="stylesheet">
+      <link th:href="@{/lib/layui/css/layui.css}" rel="stylesheet" media="all">
       <script th:src="@{/lib/layui/layui.js}"></script>
       <script th:src="@{/lib/jquery.min.js}"></script>
-      <!--Editor.md-->
-      <link rel="stylesheet" th:href="@{/lib/editormd/css/style.css}" />
-      <link rel="stylesheet"  th:href="@{/lib/editormd/css/editormd.css}" />
-      <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+      <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
       
     </head>
     <body>
@@ -21,10 +18,10 @@
         </div>
         <div style="display: flex;flex-direction: row;justify-content: flex-end;flex: 1;">    
           <div class="button" style="background-color: rgb(131, 140, 147);">
-            <a href="/login.html">登录</a>
+            <a href="/login.html" style="color: black;">登录</a>
           </div>
           <div class="button" style="background-color: rgb(131, 140, 147);">
-            <a href="#">注册</a>
+            <a href="#" style="color: black;">注册</a>
           </div>
         </div>
       </div>
@@ -50,72 +47,80 @@
 
 
         <div class="column middle" style="width: 85%;">
-          <div style="background:rgba(240, 181, 33, 0.5);height: 80vh;">
-            <!-- 这里是markdown编辑框 -->
-            <div id="article-content" style="position: fixed;">
-              <textarea style="display:none;"> </textarea>
-            </div>
-          </div>
+          <div style="background:rgba(255, 255, 255, 0.9);height: 100vh;">
+            
+            <div class="layui-container" style="position: fixed;width: 85%;">
+
+              <div>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+
+                <hr class="layui-border-red">
+
+                <div>
+                   <table class="table table-hover table-bordered" >
+                    <thead>
+                      <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                      <th scope="col">Handle</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">3</th>
+                      <td colspan="2">Larry the Bird</td>
+                      <td>@twitter</td>
+                      </tr>
+                      </tbody>
+                   </table>
+                  </div>
+
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                    </nav>
+
+
+            
+          </div>     
+            <!-- 显示文章表格，上面是进行增删改查的按钮 -->
+            <!-- <div class="layui-btn-group">
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-sm">
+                <i class="layui-icon">&#xe642;</i>
+              </button>
+              <button type="button" class="layui-btn layui-btn-primary layui-btn-sm">
+                <i class="layui-icon">&#xe640;</i>
+              </button>
+            </div> -->
+            
+            
+          
         </div>
       </div>
-    
-            <script th:src="@{/lib/jquery.min.js}"></script>
-            <script th:src="@{/lib/editormd/editormd.min.js}"></script>
-            <script type="text/javascript">
-                var testEditor;
-                //window.onload = function(){ }
-                $(function() {
-                    testEditor = editormd("article-content", {
-                        width : "85%",
-                        height : 670,
-                        syncScrolling : "single",
-                        path : "../lib/editormd/lib/",
-                        saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
-                        emoji: true,
-                        theme: "dark",//工具栏主题
-                        previewTheme: "dark",//预览主题
-                        editorTheme: "pastel-on-dark",//编辑主题
-                        tex : true,                   // 开启科学公式TeX语言支持，默认关闭
-                        flowChart : true,             // 开启流程图支持，默认关闭
-                        sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
-                        //图片上传
-                        imageUpload : true,
-                        imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-                        imageUploadURL : "/article/file/upload",
-                        onload : function() {
-                            console.log('onload', this);
-                        },
-                        /*指定需要显示的功能按钮*/
-                        toolbarIcons : function() {
-                            return ["undo","redo","|",
-                                "bold","del","italic","quote","ucwords","uppercase","lowercase","|",
-                                "h1","h2","h3","h4","h5","h6","|",
-                                "list-ul","list-ol","hr","|",
-                                "link","reference-link","image","code","preformatted-text",
-                                "code-block","table","datetime","emoji","html-entities","pagebreak","|",
-                                "goto-line","watch","preview","fullscreen","clear","search","|",
-                                "help","info","releaseIcon", "index"]
-                        },
-                        /*自定义功能按钮，下面我自定义了2个，一个是发布，一个是返回首页*/
-                        toolbarIconTexts : {
-                            releaseIcon : "<span bgcolor=\"gray\">发布</span>",
-                            index : "<span bgcolor=\"red\">返回首页</span>",
-                        },
-             
-                        /*给自定义按钮指定回调函数*/
-                        toolbarHandlers:{
-                            releaseIcon : function(cm, icon, cursor, selection) {
-                                //表单提交
-                                mdEditorForm.method = "post";
-                                mdEditorForm.action = "/article/addArticle";//提交至服务器的路径
-                                mdEditorForm.submit();
-                            },
-                            index : function(){
-                                window.location.href = '/';
-                            },
-                        }
-                    });
-                });
-            </script>     
+    </div>
+      <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+           
     </body>
 </html>
